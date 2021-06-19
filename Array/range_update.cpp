@@ -19,7 +19,7 @@ void updateRange(int n)
 void query(int l, int r, int n)
 {
   s[l] += n;
-  s[r] += -n;
+  s[r + 1] += -n;
 }
 
 int main()
@@ -30,7 +30,7 @@ int main()
   query(0, 6, 10);
   query(0, 6, 10);
   query(0, 6, 10);
-  query(1, 7, -100);
+  query(1, 6, -100);
 
   updateRange(7);
 
