@@ -23,7 +23,7 @@ void solve(int a[], int n)
 
 int main()
 {
-  int a[] = {-1, -2, 5, 7, -3, 10, -30, 20};
+  int a[] = {-1, -2, 5, 7, -3, 10, -30, 17};
 
   solve(a, 8);
   return 0;
