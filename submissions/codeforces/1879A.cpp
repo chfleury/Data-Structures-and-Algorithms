@@ -1,60 +1,46 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define ll long long
-
-bool comparePair(const pair<ll, int> &a, const pair<ll, int> &b)
-{
-    return a.first > b.first;
-}
-
-void solve()
-{
-    ll ans = 0;
-    int n, e;
-    ll w, f;
-    cin >> n;
-
-    vector<pair<ll, int>> s;
-
-    cin >> w >> e;
-
-    for (int i = 1; i < n; i++)
+    #include <bits/stdc++.h>
+    using namespace std;
+    #define ll long long
+     
+    bool comparePair(const pair<ll, int> &a, const pair<ll, int> &b)
     {
-        cin >> f >> ans;
-        s.emplace_back(f, ans);
+        return a.first > b.first;
     }
-
-    sort(s.begin(), s.end(), comparePair);
-
-    for (int i = 0; i < n - 1; i++)
+     
+    void solve()
     {
-        if (s[i].first >= w)
+        ll ans = 0;
+        int n, e;
+        ll w, f, g;
+        cin >> n;
+     
+        cin >> w >> e;
+        ans = w;
+        for (int i = 1; i < n; i++)
         {
-
-            if (s[i].second >= e)
+            cin >> f >> g;
+     
+            if (f >= w)
             {
-                ans = -1;
-                break;
+                if (g >= e)
+                {
+                    ans = -1;
+                }
             }
         }
-        else
-        {
-            ans = w;
-            break;
-        }
+     
+        cout << ans << endl;
     }
-
-    cout << ans << endl;
-}
-
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
+     
+    int main()
     {
-        solve();
+        int t;
+        cin >> t;
+        while (t--)
+        {
+            solve();
+        }
+     
+        return 0;
     }
 
-    return 0;
-}
